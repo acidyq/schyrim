@@ -1,0 +1,10 @@
+{
+  "id": "template-mod",
+  "name": "Template Mod",
+  "version": "0.1.0",
+  "author": "Your Name Here",
+  "description": "Replace this with a description of what your mod does",
+  "dependencies": [],
+  "conflictsWith": [],
+  "loadOrder": 50
+}

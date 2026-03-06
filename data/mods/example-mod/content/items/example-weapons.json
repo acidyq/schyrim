@@ -1,0 +1,28 @@
+[
+  {
+    "id": "example_mod_ebony_sword",
+    "name": "Ebony Sword",
+    "type": "weapon",
+    "subtype": "sword",
+    "description": "A finely crafted blade of pure ebony. This example item demonstrates how to add custom weapons via mods.",
+    "weight": 14,
+    "value": 1500,
+    "damage": 18,
+    "enchantment": null,
+    "equippable": true,
+    "equipSlots": ["right_hand", "left_hand"]
+  },
+  {
+    "id": "example_mod_glass_bow",
+    "name": "Glass Bow",
+    "type": "weapon",
+    "subtype": "bow",
+    "description": "A magnificent bow crafted from solid glass. Added by the Example Mod.",
+    "weight": 8,
+    "value": 1200,
+    "damage": 16,
+    "enchantment": null,
+    "equippable": true,
+    "equipSlots": ["right_hand"]
+  }
+]

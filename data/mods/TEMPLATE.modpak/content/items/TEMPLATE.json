@@ -1,0 +1,15 @@
+[
+  {
+    "id": "your_mod_id_item_name",
+    "name": "Item Name",
+    "type": "weapon",
+    "subtype": "sword",
+    "description": "Item description",
+    "weight": 10,
+    "value": 500,
+    "damage": 12,
+    "enchantment": null,
+    "equippable": true,
+    "equipSlots": ["right_hand", "left_hand"]
+  }
+]

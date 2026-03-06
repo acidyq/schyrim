@@ -1,0 +1,21 @@
+[
+  {
+    "id": "your_mod_id_spell_name",
+    "name": "Spell Name",
+    "school": "destruction",
+    "description": "Spell description",
+    "magickaCost": 25,
+    "damage": 10,
+    "damageType": "fire",
+    "range": "ranged",
+    "castTime": "instant",
+    "effects": [
+      {
+        "type": "direct_damage",
+        "magnitude": 10,
+        "duration": 0
+      }
+    ],
+    "skillRequirement": 0
+  }
+]

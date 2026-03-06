@@ -1,0 +1,44 @@
+[
+  {
+    "id": "example_mod_lightning_bolt",
+    "name": "Lightning Bolt",
+    "school": "destruction",
+    "description": "A powerful strike of pure lightning. This example spell demonstrates custom spell creation.",
+    "magickaCost": 45,
+    "damage": 20,
+    "damageType": "shock",
+    "range": "ranged",
+    "castTime": "instant",
+    "effects": [
+      {
+        "type": "direct_damage",
+        "magnitude": 20,
+        "duration": 0
+      },
+      {
+        "type": "drain_magicka",
+        "magnitude": 10,
+        "duration": 0
+      }
+    ],
+    "skillRequirement": 25
+  },
+  {
+    "id": "example_mod_restore_health",
+    "name": "Restore Health",
+    "school": "restoration",
+    "description": "Restores 25 points of health. Added by the Example Mod.",
+    "magickaCost": 25,
+    "healAmount": 25,
+    "range": "self",
+    "castTime": "instant",
+    "effects": [
+      {
+        "type": "direct_heal",
+        "magnitude": 25,
+        "duration": 0
+      }
+    ],
+    "skillRequirement": 0
+  }
+]

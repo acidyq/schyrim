@@ -1,0 +1,10 @@
+{
+  "id": "example-mod",
+  "name": "Example Mod Pack",
+  "version": "1.0.0",
+  "author": "Schyrim Team",
+  "description": "An example modpack demonstrating how to create and structure custom content",
+  "dependencies": [],
+  "conflictsWith": [],
+  "loadOrder": 100
+}
