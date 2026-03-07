@@ -3,6 +3,7 @@ node_modules/
 dist/
 
 # AI Configuration (contains API keys)
+.env
 data/config/ai-config.yaml
 
 # OS files
