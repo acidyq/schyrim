@@ -1,0 +1,67 @@
+[
+    {
+        "id": "iron_helmet",
+        "name": "Iron Helmet",
+        "description": "A sturdy iron helm that protects the head from blows.",
+        "type": "armor",
+        "weight": 5,
+        "baseValue": 60,
+        "rarity": "common",
+        "tags": [],
+        "armorRating": 15,
+        "slot": "head",
+        "armorType": "heavy"
+    },
+    {
+        "id": "leather_armor",
+        "name": "Leather Armor",
+        "description": "Supple tanned leather, offering decent protection without sacrificing mobility.",
+        "type": "armor",
+        "weight": 6,
+        "baseValue": 50,
+        "rarity": "common",
+        "tags": [],
+        "armorRating": 20,
+        "slot": "chest",
+        "armorType": "light"
+    },
+    {
+        "id": "fur_boots",
+        "name": "Fur Boots",
+        "description": "Warm fur-lined boots. Common among the people of Skyrim.",
+        "type": "armor",
+        "weight": 3,
+        "baseValue": 15,
+        "rarity": "common",
+        "tags": [],
+        "armorRating": 5,
+        "slot": "feet",
+        "armorType": "light"
+    },
+    {
+        "id": "iron_shield",
+        "name": "Iron Shield",
+        "description": "A round iron shield with a simple design. Reliable in battle.",
+        "type": "armor",
+        "weight": 12,
+        "baseValue": 60,
+        "rarity": "common",
+        "tags": [],
+        "armorRating": 20,
+        "slot": "shield",
+        "armorType": "heavy"
+    },
+    {
+        "id": "hide_bracers",
+        "name": "Hide Bracers",
+        "description": "Simple bracers made from animal hide.",
+        "type": "armor",
+        "weight": 2,
+        "baseValue": 10,
+        "rarity": "common",
+        "tags": [],
+        "armorRating": 5,
+        "slot": "hands",
+        "armorType": "light"
+    }
+]

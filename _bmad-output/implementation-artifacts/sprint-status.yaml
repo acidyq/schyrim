@@ -1,0 +1,340 @@
+# Sprint Status — Schyrim
+# BMAD Implementation Tracking
+# Last synced: 2026-03-06
+
+sprint:
+  name: "Sprint 2 — Combat Depth, Content & Polish"
+  goal: "Add spell casting, sneak combat, debug console, integration tests, and modder docs"
+  start_date: 2026-03-06
+  status: in_progress
+
+epics:
+  - id: E1
+    title: "Project Foundation & Core Infrastructure"
+    priority: P0
+    status: done
+    stories:
+      - id: "1.1"
+        title: "Project Initialization & Build Setup"
+        status: done
+        points: 3
+      - id: "1.2"
+        title: "Core Type Definitions"
+        status: done
+        points: 5
+      - id: "1.3"
+        title: "Event Bus Implementation"
+        status: done
+        points: 3
+      - id: "1.4"
+        title: "Data Loader & JSON Schema Validation"
+        status: done
+        points: 5
+        notes: "AJV validation exists; only items schema fully wired, others use raw parse — acceptable for v0.1"
+      - id: "1.5"
+        title: "Game State Manager"
+        status: done
+        points: 5
+      - id: "1.6"
+        title: "Configuration Manager"
+        status: done
+        points: 3
+        notes: "YAML config exists with difficulty/verbosity settings"
+
+  - id: E2
+    title: "Character Creation & Progression"
+    priority: P0
+    status: done
+    stories:
+      - id: "2.1"
+        title: "Race Definitions & Character Creation"
+        status: done
+        points: 5
+      - id: "2.2"
+        title: "Attributes & Derived Stats"
+        status: done
+        points: 3
+      - id: "2.3"
+        title: "Skill System (Level by Use)"
+        status: done
+        points: 5
+      - id: "2.4"
+        title: "Level-Up & Perk System"
+        status: done
+        points: 5
+      - id: "2.5"
+        title: "Character Sheet CLI Display"
+        status: done
+        points: 3
+
+  - id: E3
+    title: "Inventory & Equipment System"
+    priority: P0
+    status: done
+    stories:
+      - id: "3.1"
+        title: "Item Data Model & Loading"
+        status: done
+        points: 3
+      - id: "3.2"
+        title: "Inventory Management & Carry Weight"
+        status: done
+        points: 5
+      - id: "3.3"
+        title: "Equipment Slots & Stat Effects"
+        status: done
+        points: 5
+      - id: "3.4"
+        title: "Inventory CLI Display (Sorting & Filtering)"
+        status: done
+        points: 3
+      - id: "3.5"
+        title: "Loot Generation (Leveled Lists)"
+        status: done
+        points: 5
+
+  - id: E4
+    title: "World, Navigation & Time"
+    priority: P0
+    status: partial
+    stories:
+      - id: "4.1"
+        title: "Location Graph & Data Loading"
+        status: done
+        points: 5
+      - id: "4.2"
+        title: "Navigation System & Movement"
+        status: done
+        points: 5
+      - id: "4.3"
+        title: "Time of Day System"
+        status: done
+        points: 3
+      - id: "4.4"
+        title: "Context-Sensitive Actions"
+        status: done
+        points: 3
+      - id: "4.5"
+        title: "Fast Travel"
+        status: not_started
+        points: 3
+        notes: "No fast travel command yet; all movement is step-by-step"
+
+  - id: E5
+    title: "Combat System"
+    priority: P0
+    status: partial
+    stories:
+      - id: "5.1"
+        title: "Combat Session & Round Structure"
+        status: done
+        points: 8
+      - id: "5.2"
+        title: "Weapon Combat & Damage Calculation"
+        status: done
+        points: 8
+        notes: "d20 hit/miss system with nat-1 fumble, nat-20 forceCrit, Block/Dodge implemented"
+      - id: "5.3"
+        title: "Spell System & Magic"
+        status: in_progress
+        points: 5
+        notes: "Spell data exists; cast_spell action wired in combat menu as of Sprint 2"
+      - id: "5.4"
+        title: "Stealth & Sneak Attacks"
+        status: in_progress
+        points: 5
+        notes: "Sneak action added to combat menu; detection flag used for sneak attack bonus"
+      - id: "5.5"
+        title: "Status Effects & Damage Over Time"
+        status: done
+        points: 5
+      - id: "5.6"
+        title: "Combat Log Display"
+        status: partial
+        points: 3
+        notes: "Verbosity setting defined but not yet used to filter output"
+
+  - id: E6
+    title: "Dialogue & Quest System"
+    priority: P0
+    status: partial
+    stories:
+      - id: "6.1"
+        title: "Dialogue Engine & Branching Choices"
+        status: done
+        points: 5
+      - id: "6.2"
+        title: "Dialogue Condition Evaluator"
+        status: done
+        points: 5
+      - id: "6.3"
+        title: "Quest System with Stages"
+        status: done
+        points: 8
+      - id: "6.4"
+        title: "Quest Journal CLI"
+        status: done
+        points: 3
+      - id: "6.5"
+        title: "Radiant Quest Generator"
+        status: not_started
+        points: 5
+        notes: "QuestType='radiant' typed; no generator, no radiant data files"
+
+  - id: E7
+    title: "Factions & Reputation"
+    priority: P1
+    status: done
+    stories:
+      - id: "7.1"
+        title: "Faction Data Model & Reputation Tracking"
+        status: done
+        points: 3
+      - id: "7.2"
+        title: "Reputation Effects on Systems"
+        status: done
+        points: 5
+        notes: "Price modifier + dialogue unlock conditions wired; guard hostility not yet automatic"
+      - id: "7.3"
+        title: "Faction Rank Progression"
+        status: done
+        points: 3
+
+  - id: E8
+    title: "Economy & Bartering"
+    priority: P0
+    status: done
+    stories:
+      - id: "8.1"
+        title: "Price Calculation Engine"
+        status: done
+        points: 5
+      - id: "8.2"
+        title: "Vendor System & Archetypes"
+        status: done
+        points: 5
+      - id: "8.3"
+        title: "CLI Trade Interface"
+        status: done
+        points: 5
+      - id: "8.4"
+        title: "Economy Event Hooks"
+        status: done
+        points: 3
+
+  - id: E9
+    title: "AI Narrative Engine"
+    priority: P0
+    status: done
+    stories:
+      - id: "9.1"
+        title: "LLM Provider Interface & Adapters"
+        status: done
+        points: 8
+        notes: "OpenRouter + Groq + Mock providers; Gemini planned next"
+      - id: "9.2"
+        title: "First-Run Provider Configuration"
+        status: done
+        points: 5
+        notes: "Auto-detects OPENROUTER_API_KEY / GROQ_API_KEY env vars; no wizard UI yet"
+      - id: "9.3"
+        title: "Prompt Builder"
+        status: done
+        points: 8
+      - id: "9.4"
+        title: "Response Parser & Validation"
+        status: done
+        points: 8
+      - id: "9.5"
+        title: "AI Game Loop Integration"
+        status: done
+        points: 8
+      - id: "9.6"
+        title: "AI Error Handling & Deterministic Fallback"
+        status: done
+        points: 5
+
+  - id: E10
+    title: "Events & Interaction Framework"
+    priority: P1
+    status: partial
+    stories:
+      - id: "10.1"
+        title: "Random Encounter System"
+        status: partial
+        points: 5
+        notes: "Basic encounter trigger on dangerous travel; no encounter templates or data files"
+      - id: "10.2"
+        title: "Environmental Hazard Hooks"
+        status: not_started
+        points: 3
+      - id: "10.3"
+        title: "World Event Scheduler"
+        status: not_started
+        points: 5
+      - id: "10.4"
+        title: "Extensible Interaction Types"
+        status: partial
+        points: 3
+        notes: "Pattern established via talk/loot/trade/attack; not formally documented"
+
+  - id: E11
+    title: "Vertical Slice Content"
+    priority: P0
+    status: done
+    stories:
+      - id: "11.1"
+        title: "Locations — Whiterun Region"
+        status: done
+        points: 5
+      - id: "11.2"
+        title: "NPCs & Vendor Data"
+        status: done
+        points: 5
+      - id: "11.3"
+        title: "Enemies & Combat Encounters"
+        status: done
+        points: 5
+      - id: "11.4"
+        title: "Items — Weapons, Armor & Consumables"
+        status: done
+        points: 3
+      - id: "11.5"
+        title: "Quest — The Golden Claw"
+        status: done
+        points: 8
+
+  - id: E12
+    title: "Polish, Save/Load & Documentation"
+    priority: P0
+    status: partial
+    stories:
+      - id: "12.1"
+        title: "Save & Load System"
+        status: done
+        points: 5
+      - id: "12.2"
+        title: "Help System & Command Reference"
+        status: not_started
+        points: 3
+      - id: "12.3"
+        title: "Debug Console & Dev Commands"
+        status: not_started
+        points: 5
+      - id: "12.4"
+        title: "Integration Testing — Full Gameplay Loop"
+        status: not_started
+        points: 8
+      - id: "12.5"
+        title: "AI & Modder Guide"
+        status: not_started
+        points: 3
+
+totals:
+  epics: 12
+  stories: 59
+  total_points: 283
+  done_points: 209
+  in_progress_points: 10
+  not_started_points: 64
+  completion_pct: "74%"

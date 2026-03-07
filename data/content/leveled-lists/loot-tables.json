@@ -1,0 +1,357 @@
+[
+    {
+        "id": "bandit_loot",
+        "entries": [
+            {
+                "itemId": "iron_dagger",
+                "minLevel": 1,
+                "weight": 30,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "iron_sword",
+                "minLevel": 1,
+                "weight": 25,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "hide_boots",
+                "minLevel": 1,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "potion_minor_healing",
+                "minLevel": 1,
+                "weight": 35,
+                "count": {
+                    "min": 1,
+                    "max": 2
+                }
+            },
+            {
+                "itemId": "bread_loaf",
+                "minLevel": 1,
+                "weight": 40,
+                "count": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            {
+                "itemId": "steel_sword",
+                "minLevel": 6,
+                "maxLevel": 20,
+                "weight": 15,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "steel_greatsword",
+                "minLevel": 8,
+                "weight": 10,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "potion_healing",
+                "minLevel": 5,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "iron_armor",
+                "minLevel": 3,
+                "weight": 12,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        ],
+        "rollCount": {
+            "min": 1,
+            "max": 3
+        }
+    },
+    {
+        "id": "draugr_loot",
+        "entries": [
+            {
+                "itemId": "ancient_nord_sword",
+                "minLevel": 1,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "ancient_nord_war_axe",
+                "minLevel": 1,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "draugr_bone_dust",
+                "minLevel": 1,
+                "weight": 50,
+                "count": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            {
+                "itemId": "linen_wrap",
+                "minLevel": 1,
+                "weight": 45,
+                "count": {
+                    "min": 1,
+                    "max": 2
+                }
+            },
+            {
+                "itemId": "ebony_sword",
+                "minLevel": 20,
+                "weight": 3,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        ],
+        "rollCount": {
+            "min": 1,
+            "max": 2
+        }
+    },
+    {
+        "id": "dungeon_chest",
+        "entries": [
+            {
+                "itemId": "potion_minor_healing",
+                "minLevel": 1,
+                "weight": 35,
+                "count": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            {
+                "itemId": "potion_healing",
+                "minLevel": 5,
+                "weight": 25,
+                "count": {
+                    "min": 1,
+                    "max": 2
+                }
+            },
+            {
+                "itemId": "potion_minor_magicka",
+                "minLevel": 1,
+                "weight": 30,
+                "count": {
+                    "min": 1,
+                    "max": 2
+                }
+            },
+            {
+                "itemId": "iron_sword",
+                "minLevel": 1,
+                "weight": 15,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "steel_sword",
+                "minLevel": 6,
+                "weight": 10,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "scroll_fireball",
+                "minLevel": 8,
+                "weight": 5,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "iron_armor",
+                "minLevel": 1,
+                "weight": 10,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "hide_boots",
+                "minLevel": 1,
+                "weight": 15,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        ],
+        "rollCount": {
+            "min": 2,
+            "max": 4
+        }
+    },
+    {
+        "id": "merchant_restock",
+        "entries": [
+            {
+                "itemId": "potion_minor_healing",
+                "minLevel": 1,
+                "weight": 50,
+                "count": {
+                    "min": 2,
+                    "max": 5
+                }
+            },
+            {
+                "itemId": "potion_minor_stamina",
+                "minLevel": 1,
+                "weight": 40,
+                "count": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            {
+                "itemId": "potion_minor_magicka",
+                "minLevel": 1,
+                "weight": 40,
+                "count": {
+                    "min": 1,
+                    "max": 3
+                }
+            },
+            {
+                "itemId": "bread_loaf",
+                "minLevel": 1,
+                "weight": 60,
+                "count": {
+                    "min": 2,
+                    "max": 5
+                }
+            },
+            {
+                "itemId": "iron_dagger",
+                "minLevel": 1,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 2
+                }
+            },
+            {
+                "itemId": "iron_sword",
+                "minLevel": 1,
+                "weight": 15,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            },
+            {
+                "itemId": "hide_boots",
+                "minLevel": 1,
+                "weight": 20,
+                "count": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        ],
+        "rollCount": {
+            "min": 3,
+            "max": 5
+        }
+    },
+    {
+        "id": "boss_draugr_loot",
+        "entries": [
+            {
+                "itemId": "ancient_nord_war_axe",
+                "minLevel": 1,
+                "weight": 25,
+                "count": { "min": 1, "max": 1 }
+            },
+            {
+                "itemId": "ancient_nord_sword",
+                "minLevel": 1,
+                "weight": 25,
+                "count": { "min": 1, "max": 1 }
+            },
+            {
+                "itemId": "potion_healing",
+                "minLevel": 1,
+                "weight": 40,
+                "count": { "min": 1, "max": 2 }
+            },
+            {
+                "itemId": "potion_minor_magicka",
+                "minLevel": 1,
+                "weight": 30,
+                "count": { "min": 1, "max": 2 }
+            },
+            {
+                "itemId": "iron_shield",
+                "minLevel": 1,
+                "weight": 20,
+                "count": { "min": 1, "max": 1 }
+            },
+            {
+                "itemId": "iron_helmet",
+                "minLevel": 1,
+                "weight": 20,
+                "count": { "min": 1, "max": 1 }
+            },
+            {
+                "itemId": "steel_sword",
+                "minLevel": 5,
+                "weight": 20,
+                "count": { "min": 1, "max": 1 }
+            },
+            {
+                "itemId": "ebony_sword",
+                "minLevel": 18,
+                "weight": 5,
+                "count": { "min": 1, "max": 1 }
+            }
+        ],
+        "rollCount": {
+            "min": 2,
+            "max": 4
+        }
+    }
+]

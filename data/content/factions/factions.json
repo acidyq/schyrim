@@ -1,0 +1,211 @@
+[
+    {
+        "id": "companions",
+        "name": "The Companions",
+        "description": "An ancient order of warriors based in Jorrvaskr, Whiterun. They take contracts and fight with honor — but harbor a dark secret.",
+        "ranks": [
+            {
+                "id": "outsider",
+                "name": "Outsider",
+                "reputationThreshold": -100
+            },
+            {
+                "id": "whelp",
+                "name": "Whelp",
+                "reputationThreshold": 0
+            },
+            {
+                "id": "companion",
+                "name": "Companion",
+                "reputationThreshold": 20,
+                "benefits": [
+                    "Access to Companions quests"
+                ]
+            },
+            {
+                "id": "proven",
+                "name": "Proven",
+                "reputationThreshold": 50,
+                "benefits": [
+                    "Discount at Companions vendors",
+                    "Advanced training"
+                ]
+            },
+            {
+                "id": "harbinger",
+                "name": "Harbinger",
+                "reputationThreshold": 85,
+                "benefits": [
+                    "Companions follow you",
+                    "Free lodging at Jorrvaskr"
+                ]
+            }
+        ],
+        "hostileBelow": -60,
+        "alliedAbove": 50,
+        "defaultReputation": 0,
+        "allies": [
+            "whiterun_guard"
+        ],
+        "enemies": [
+            "silver_hand"
+        ]
+    },
+    {
+        "id": "thieves_guild",
+        "name": "Thieves Guild",
+        "description": "The underground network of thieves and fences operating from the Ratway beneath Riften. They deal in shadows and stolen goods.",
+        "ranks": [
+            {
+                "id": "mark",
+                "name": "Mark",
+                "reputationThreshold": -100
+            },
+            {
+                "id": "footpad",
+                "name": "Footpad",
+                "reputationThreshold": 0,
+                "vendorAccess": [
+                    "tonilia_fence"
+                ]
+            },
+            {
+                "id": "bandit",
+                "name": "Bandit",
+                "reputationThreshold": 15
+            },
+            {
+                "id": "operative",
+                "name": "Operative",
+                "reputationThreshold": 35,
+                "benefits": [
+                    "Better fence prices"
+                ]
+            },
+            {
+                "id": "master_thief",
+                "name": "Master Thief",
+                "reputationThreshold": 65,
+                "benefits": [
+                    "Access to master-level lockpicks",
+                    "Fence anything"
+                ]
+            },
+            {
+                "id": "guild_master",
+                "name": "Guild Master",
+                "reputationThreshold": 90,
+                "benefits": [
+                    "Cut of all Guild operations"
+                ]
+            }
+        ],
+        "hostileBelow": -50,
+        "alliedAbove": 65,
+        "defaultReputation": -10,
+        "allies": [],
+        "enemies": [
+            "whiterun_guard"
+        ]
+    },
+    {
+        "id": "college_of_winterhold",
+        "name": "College of Winterhold",
+        "description": "The premier institution of magical study in Skyrim. Perched on a cliff above the Sea of Ghosts, it shelters mages shunned by the rest of Nord society.",
+        "ranks": [
+            {
+                "id": "trespasser",
+                "name": "Trespasser",
+                "reputationThreshold": -100
+            },
+            {
+                "id": "applicant",
+                "name": "Applicant",
+                "reputationThreshold": -10
+            },
+            {
+                "id": "apprentice",
+                "name": "Apprentice",
+                "reputationThreshold": 0,
+                "benefits": [
+                    "Access to College vendors",
+                    "Basic spell training"
+                ]
+            },
+            {
+                "id": "scholar",
+                "name": "Scholar",
+                "reputationThreshold": 30,
+                "benefits": [
+                    "Advanced training",
+                    "Library access"
+                ]
+            },
+            {
+                "id": "wizard",
+                "name": "Wizard",
+                "reputationThreshold": 55,
+                "benefits": [
+                    "Personal quarters",
+                    "Expert-level spells"
+                ]
+            },
+            {
+                "id": "arch_mage",
+                "name": "Arch-Mage",
+                "reputationThreshold": 85,
+                "benefits": [
+                    "Arch-Mage quarters",
+                    "All College resources"
+                ]
+            }
+        ],
+        "hostileBelow": -70,
+        "alliedAbove": 55,
+        "defaultReputation": 0,
+        "allies": [],
+        "enemies": [
+            "thalmor"
+        ]
+    },
+    {
+        "id": "whiterun_guard",
+        "name": "Whiterun Guard",
+        "description": "The city guard of Whiterun. They keep the peace — and arrest those who disturb it. Yellow shields and a watchful eye.",
+        "ranks": [
+            {
+                "id": "criminal",
+                "name": "Criminal",
+                "reputationThreshold": -100
+            },
+            {
+                "id": "suspect",
+                "name": "Suspect",
+                "reputationThreshold": -30
+            },
+            {
+                "id": "citizen",
+                "name": "Citizen",
+                "reputationThreshold": 0
+            },
+            {
+                "id": "thane",
+                "name": "Thane",
+                "reputationThreshold": 60,
+                "benefits": [
+                    "Guards look the other way for minor crimes",
+                    "Housecarl companion"
+                ]
+            }
+        ],
+        "hostileBelow": -50,
+        "alliedAbove": 40,
+        "defaultReputation": 5,
+        "allies": [
+            "companions"
+        ],
+        "enemies": [
+            "thieves_guild"
+        ]
+    }
+]

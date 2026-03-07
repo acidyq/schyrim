@@ -1,0 +1,194 @@
+[
+    {
+        "id": "nord",
+        "name": "Nord",
+        "description": "The hardy, fair-haired people of Skyrim. Known for their fierce warriors and natural resistance to frost.",
+        "attributeBonuses": {
+            "healthMax": 10,
+            "staminaMax": 5
+        },
+        "skillBonuses": {
+            "two_handed": 10,
+            "one_handed": 5,
+            "block": 5,
+            "light_armor": 5,
+            "speech": 5,
+            "smithing": 5
+        },
+        "racialAbility": "Battle Cry: Nearby enemies flee for 30 seconds (once per day)",
+        "startingSpells": []
+    },
+    {
+        "id": "imperial",
+        "name": "Imperial",
+        "description": "The civilized people of Cyrodiil. Skilled diplomats and versatile warriors.",
+        "attributeBonuses": {
+            "healthMax": 5,
+            "staminaMax": 5,
+            "magickaMax": 5
+        },
+        "skillBonuses": {
+            "one_handed": 5,
+            "block": 5,
+            "heavy_armor": 5,
+            "speech": 10,
+            "destruction": 5,
+            "restoration": 5
+        },
+        "racialAbility": "Voice of the Emperor: Calms nearby people for 60 seconds (once per day)",
+        "startingSpells": []
+    },
+    {
+        "id": "breton",
+        "name": "Breton",
+        "description": "The magic-touched people of High Rock. Natural spellcasters with innate magic resistance.",
+        "attributeBonuses": {
+            "magickaMax": 15
+        },
+        "skillBonuses": {
+            "conjuration": 10,
+            "restoration": 5,
+            "alteration": 5,
+            "illusion": 5,
+            "speech": 5,
+            "alchemy": 5
+        },
+        "racialAbility": "Dragonskin: Absorb 50% of incoming spells for 60 seconds (once per day)",
+        "startingSpells": [
+            "spell_flames"
+        ]
+    },
+    {
+        "id": "dunmer",
+        "name": "Dunmer (Dark Elf)",
+        "description": "The dark-skinned elves of Morrowind. Skilled in stealth and destruction magic, with natural fire resistance.",
+        "attributeBonuses": {
+            "magickaMax": 10
+        },
+        "skillBonuses": {
+            "destruction": 10,
+            "light_armor": 5,
+            "sneak": 5,
+            "alchemy": 5,
+            "illusion": 5,
+            "alteration": 5
+        },
+        "racialAbility": "Ancestor's Wrath: Cloak of flames that damages nearby enemies (once per day)",
+        "startingSpells": [
+            "spell_flames"
+        ]
+    },
+    {
+        "id": "altmer",
+        "name": "Altmer (High Elf)",
+        "description": "The tall, golden-skinned elves of the Summerset Isles. The most magically gifted of all races.",
+        "attributeBonuses": {
+            "magickaMax": 25
+        },
+        "skillBonuses": {
+            "illusion": 10,
+            "destruction": 5,
+            "conjuration": 5,
+            "restoration": 5,
+            "alteration": 5,
+            "enchanting": 5
+        },
+        "racialAbility": "Highborn: Regenerate magicka faster for 60 seconds (once per day)",
+        "startingSpells": [
+            "spell_flames",
+            "spell_healing"
+        ]
+    },
+    {
+        "id": "bosmer",
+        "name": "Bosmer (Wood Elf)",
+        "description": "The nimble forest-dwellers of Valenwood. Unmatched archers and scouts.",
+        "attributeBonuses": {
+            "staminaMax": 10
+        },
+        "skillBonuses": {
+            "archery": 10,
+            "sneak": 5,
+            "light_armor": 5,
+            "lockpicking": 5,
+            "pickpocket": 5,
+            "alchemy": 5
+        },
+        "racialAbility": "Command Animal: Make an animal an ally for 60 seconds (once per day)",
+        "startingSpells": []
+    },
+    {
+        "id": "orc",
+        "name": "Orc (Orsimer)",
+        "description": "The pariah folk of the Wrothgarian Mountains. The fiercest warriors in all of Tamriel.",
+        "attributeBonuses": {
+            "healthMax": 10,
+            "staminaMax": 10
+        },
+        "skillBonuses": {
+            "heavy_armor": 10,
+            "two_handed": 5,
+            "one_handed": 5,
+            "block": 5,
+            "smithing": 10,
+            "enchanting": 0
+        },
+        "racialAbility": "Berserker Rage: Double damage dealt, half damage taken for 60 seconds (once per day)",
+        "startingSpells": []
+    },
+    {
+        "id": "redguard",
+        "name": "Redguard",
+        "description": "The dark-skinned warriors of Hammerfell. The most naturally talented warriors in Tamriel.",
+        "attributeBonuses": {
+            "staminaMax": 15
+        },
+        "skillBonuses": {
+            "one_handed": 10,
+            "archery": 5,
+            "block": 5,
+            "destruction": 5,
+            "alteration": 5,
+            "smithing": 5
+        },
+        "racialAbility": "Adrenaline Rush: Stamina regenerates 10x faster for 60 seconds (once per day)",
+        "startingSpells": []
+    },
+    {
+        "id": "khajiit",
+        "name": "Khajiit",
+        "description": "The feline people of Elsweyr. Quick, clever, and gifted in stealth and hand-to-hand combat.",
+        "attributeBonuses": {
+            "staminaMax": 5
+        },
+        "skillBonuses": {
+            "sneak": 10,
+            "one_handed": 5,
+            "pickpocket": 5,
+            "lockpicking": 5,
+            "alchemy": 5,
+            "archery": 5
+        },
+        "racialAbility": "Night Eye: See in the dark for 60 seconds (unlimited uses)",
+        "startingSpells": []
+    },
+    {
+        "id": "argonian",
+        "name": "Argonian",
+        "description": "The reptilian people of Black Marsh. Resistant to disease and poison, and capable of breathing underwater.",
+        "attributeBonuses": {
+            "healthMax": 5,
+            "magickaMax": 5
+        },
+        "skillBonuses": {
+            "restoration": 5,
+            "alteration": 5,
+            "light_armor": 5,
+            "sneak": 5,
+            "lockpicking": 10,
+            "pickpocket": 5
+        },
+        "racialAbility": "Histskin: Rapidly regenerate health for 60 seconds (once per day)",
+        "startingSpells": []
+    }
+]

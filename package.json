@@ -1,0 +1,41 @@
+{
+  "name": "schyrim",
+  "version": "0.1.0",
+  "description": "AI-first CLI RPG inspired by Skyrim — deep systems, AI-narrated gameplay, moddable data-driven architecture",
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "play": "node dist/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest --coverage",
+    "validate-content": "tsx src/core/data-loader.ts --validate-only"
+  },
+  "keywords": [
+    "rpg",
+    "cli",
+    "ai",
+    "skyrim",
+    "text-adventure",
+    "typescript"
+  ],
+  "author": "Acydyca",
+  "license": "MIT",
+  "dependencies": {
+    "@types/blessed": "^0.1.27",
+    "ajv": "^8.18.0",
+    "blessed": "^0.1.81",
+    "chalk": "^5.6.2",
+    "inquirer": "^12.11.1",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18",
+    "yaml": "^2.8.2"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.3"
+  }
+}

@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+dist/
+
+# AI Configuration (contains API keys)
+data/config/ai-config.yaml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Game saves (optional - may want to track example saves)
+saves/
+
+# Coverage
+coverage/
+
+# BMAD Method source (cloned for reference)
+BMAD-METHOD/

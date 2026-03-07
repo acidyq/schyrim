@@ -1,0 +1,389 @@
+[
+    {
+        "id": "whiterun_gate",
+        "name": "Whiterun — City Gate",
+        "type": "city",
+        "region": "whiterun_hold",
+        "description": "The great wooden gates of Whiterun stand before you, flanked by stone walls. Guards in yellow tabards patrol above. The wind carries the scent of wood smoke and the distant clang of the blacksmith's forge.",
+        "detailedDescription": "You arrive at the imposing gates of Whiterun, the central city of Skyrim's heartland. Dragonsreach, the great palace of the Jarl, looms on the rocky cliff above the city. The plains stretch endlessly to the east, golden-green under the vast sky. A guard regards you with practiced indifference.",
+        "exits": [
+            {
+                "targetLocationId": "whiterun_market",
+                "direction": "through the gates (north)",
+                "travelTime": 1,
+                "description": "The city gates stand open during the day.",
+                "dangerLevel": 0
+            },
+            {
+                "targetLocationId": "road_to_bleakfalls",
+                "direction": "southwest along the road",
+                "travelTime": 5,
+                "description": "A worn stone road leads southwest toward the mountains.",
+                "dangerLevel": 3
+            }
+        ],
+        "entities": [
+            {
+                "type": "npc",
+                "entityId": "whiterun_guard"
+            }
+        ],
+        "tags": [
+            "civilized",
+            "outdoor",
+            "safe"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "bright",
+            "dangerLevel": 0,
+            "sounds": [
+                "wind across the plains",
+                "distant forge hammering",
+                "guard footsteps"
+            ]
+        }
+    },
+    {
+        "id": "whiterun_market",
+        "name": "Whiterun — Market Square",
+        "type": "city",
+        "region": "whiterun_hold",
+        "description": "The bustling market square of Whiterun hums with activity. Merchants hawk their wares from wooden stalls. The smell of baking bread drifts from the inn. Dragonsreach towers above on the cliff.",
+        "exits": [
+            {
+                "targetLocationId": "whiterun_gate",
+                "direction": "south to the gate",
+                "travelTime": 1,
+                "dangerLevel": 0
+            },
+            {
+                "targetLocationId": "bannered_mare",
+                "direction": "east to the inn",
+                "travelTime": 1,
+                "description": "The Bannered Mare inn — warm light spills from its windows.",
+                "dangerLevel": 0
+            }
+        ],
+        "entities": [
+            {
+                "type": "npc",
+                "entityId": "belethor",
+                "spawnCondition": {
+                    "type": "time_of_day",
+                    "params": {
+                        "period": "morning"
+                    }
+                }
+            },
+            {
+                "type": "npc",
+                "entityId": "belethor",
+                "spawnCondition": {
+                    "type": "time_of_day",
+                    "params": {
+                        "period": "afternoon"
+                    }
+                }
+            }
+        ],
+        "tags": [
+            "civilized",
+            "outdoor",
+            "safe",
+            "trade_hub"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "bright",
+            "dangerLevel": 0,
+            "sounds": [
+                "merchant calls",
+                "crowd chatter",
+                "children laughing"
+            ]
+        }
+    },
+    {
+        "id": "bannered_mare",
+        "name": "The Bannered Mare",
+        "type": "inn",
+        "region": "whiterun_hold",
+        "description": "Warm firelight fills the common room of The Bannered Mare. A bard strums a lute in the corner. The innkeeper polishes tankards behind the bar. Mead and roasted meat scent the air. Adventurers and townsfolk share stories at rough-hewn tables.",
+        "exits": [
+            {
+                "targetLocationId": "whiterun_market",
+                "direction": "outside to the market",
+                "travelTime": 1,
+                "dangerLevel": 0
+            }
+        ],
+        "entities": [
+            {
+                "type": "npc",
+                "entityId": "hulda_innkeeper"
+            },
+            {
+                "type": "container",
+                "entityId": "innkeeper_provisions"
+            }
+        ],
+        "tags": [
+            "civilized",
+            "indoor",
+            "safe"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "bright",
+            "dangerLevel": 0,
+            "temperature": "warm",
+            "sounds": [
+                "crackling fire",
+                "lute music",
+                "muffled conversation",
+                "tankards clinking"
+            ]
+        }
+    },
+    {
+        "id": "road_to_bleakfalls",
+        "name": "Road to Bleakfalls Barrow",
+        "type": "road",
+        "region": "whiterun_hold",
+        "description": "A winding mountain path climbs through pine forests toward the ancient barrow. The air grows colder as you ascend. Occasionally, you spot wolf tracks in the muddy trail.",
+        "exits": [
+            {
+                "targetLocationId": "whiterun_gate",
+                "direction": "northeast back to Whiterun",
+                "travelTime": 5,
+                "dangerLevel": 2
+            },
+            {
+                "targetLocationId": "bleakfalls_approach",
+                "direction": "southwest up the mountain",
+                "travelTime": 4,
+                "description": "The path narrows as it climbs into the mountains.",
+                "dangerLevel": 5
+            }
+        ],
+        "entities": [],
+        "tags": [
+            "outdoor",
+            "dangerous"
+        ],
+        "ambient": {
+            "defaultWeather": "cloudy",
+            "lightLevel": "dim",
+            "dangerLevel": 4,
+            "temperature": "cold",
+            "sounds": [
+                "wind through pines",
+                "distant wolf howls",
+                "crunching gravel"
+            ]
+        }
+    },
+    {
+        "id": "bleakfalls_approach",
+        "name": "Bleakfalls Barrow — Approach",
+        "type": "wilderness",
+        "region": "whiterun_hold",
+        "description": "Crumbling stone arches mark the ancient approach to Bleakfalls Barrow. Snow dusts the worn steps. Ahead, the barrow entrance is a dark mouth carved into the mountainside. You hear the distant clatter of bandits within.",
+        "exits": [
+            {
+                "targetLocationId": "road_to_bleakfalls",
+                "direction": "northeast down the mountain",
+                "travelTime": 3,
+                "dangerLevel": 3
+            },
+            {
+                "targetLocationId": "bleakfalls_entrance",
+                "direction": "into the barrow",
+                "travelTime": 1,
+                "description": "A heavy iron door leads into darkness.",
+                "dangerLevel": 7
+            }
+        ],
+        "entities": [
+            {
+                "type": "enemy",
+                "entityId": "bandit_melee"
+            }
+        ],
+        "tags": [
+            "outdoor",
+            "dangerous"
+        ],
+        "ambient": {
+            "defaultWeather": "snow",
+            "lightLevel": "dim",
+            "dangerLevel": 6,
+            "temperature": "freezing",
+            "sounds": [
+                "howling wind",
+                "loose stones skittering",
+                "distant voices echoing"
+            ]
+        }
+    },
+    {
+        "id": "bleakfalls_entrance",
+        "name": "Bleakfalls Barrow — Outer Chamber",
+        "type": "dungeon",
+        "region": "whiterun_hold",
+        "description": "The outer chamber of the barrow is damp and cold. Thick cobwebs drape the ancient stone columns. A campfire smolders near the entrance — bandits have made camp here. Deeper in, carved stone corridors descend into shadow.",
+        "exits": [
+            {
+                "targetLocationId": "bleakfalls_approach",
+                "direction": "outside",
+                "travelTime": 1,
+                "dangerLevel": 3
+            },
+            {
+                "targetLocationId": "bleakfalls_depths",
+                "direction": "deeper into the barrow",
+                "travelTime": 2,
+                "description": "A narrow staircase spirals down into the dark depths.",
+                "dangerLevel": 8
+            }
+        ],
+        "entities": [
+            {
+                "type": "enemy",
+                "entityId": "bandit_melee"
+            },
+            {
+                "type": "enemy",
+                "entityId": "bandit_archer"
+            },
+            {
+                "type": "container",
+                "entityId": "bandit_chest"
+            }
+        ],
+        "tags": [
+            "indoor",
+            "underground",
+            "dangerous"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "dim",
+            "dangerLevel": 7,
+            "temperature": "cold",
+            "sounds": [
+                "dripping water",
+                "distant rumbling",
+                "rats scurrying"
+            ]
+        }
+    },
+    {
+        "id": "bleakfalls_depths",
+        "name": "Bleakfalls Barrow — Hall of Stories",
+        "type": "dungeon",
+        "region": "whiterun_hold",
+        "description": "The Hall of Stories stretches before you — ancient Nord carvings line the walls, depicting battles with dragons. Coffins line the walls, their lids ajar. The air is thick with the scent of ancient decay and old magic. At the far end, a massive stone door bears three rotating rings with animal symbols. In the center of each ring — a slot shaped like a dragon claw.",
+        "exits": [
+            {
+                "targetLocationId": "bleakfalls_entrance",
+                "direction": "back toward the entrance",
+                "travelTime": 2,
+                "dangerLevel": 5
+            },
+            {
+                "targetLocationId": "bleakfalls_sanctum",
+                "direction": "through the puzzle door",
+                "travelTime": 1,
+                "description": "The great puzzle door — it requires the Golden Claw to open.",
+                "locked": true,
+                "keyItemId": "golden_claw_key",
+                "dangerLevel": 9
+            }
+        ],
+        "entities": [
+            {
+                "type": "enemy",
+                "entityId": "draugr"
+            },
+            {
+                "type": "enemy",
+                "entityId": "draugr"
+            },
+            {
+                "type": "enemy",
+                "entityId": "draugr_wight"
+            },
+            {
+                "type": "container",
+                "entityId": "draugr_coffin_loot"
+            }
+        ],
+        "tags": [
+            "indoor",
+            "underground",
+            "dangerous",
+            "sacred"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "dark",
+            "dangerLevel": 8,
+            "temperature": "cold",
+            "sounds": [
+                "rattling bones",
+                "ancient whispers",
+                "wind through stone passages"
+            ]
+        }
+    },
+    {
+        "id": "bleakfalls_sanctum",
+        "name": "Bleakfalls Barrow — Sanctum",
+        "type": "dungeon",
+        "region": "whiterun_hold",
+        "description": "The inner sanctum of Bleakfalls Barrow. A massive sarcophagus dominates the chamber, inscribed with ancient dragon runes. A Word Wall towers behind it — ancient script carved into living rock, pulsing with faint blue light. Cold radiates from the sarcophagus. Something stirs within.",
+        "detailedDescription": "You step into the heart of the barrow. The room is vast, carved from the mountain itself. Columns of ancient stone rise to a vaulted ceiling lost in shadow. Before you stands a Word Wall — a curved wall of dark stone covered in glowing dragonscript. The words seem to call to you. But first — the sarcophagus lid begins to slide. The Draugr Overlord awakens.",
+        "exits": [
+            {
+                "targetLocationId": "bleakfalls_depths",
+                "direction": "back through the puzzle door",
+                "travelTime": 1,
+                "dangerLevel": 5
+            }
+        ],
+        "entities": [
+            {
+                "type": "enemy",
+                "entityId": "draugr_overlord"
+            },
+            {
+                "type": "container",
+                "entityId": "overlord_chest"
+            },
+            {
+                "type": "interactable",
+                "entityId": "word_wall_unrelenting_force"
+            }
+        ],
+        "tags": [
+            "indoor",
+            "underground",
+            "dangerous",
+            "sacred",
+            "no_fast_travel"
+        ],
+        "ambient": {
+            "defaultWeather": "clear",
+            "lightLevel": "dark",
+            "dangerLevel": 10,
+            "temperature": "freezing",
+            "sounds": [
+                "pulsing magical energy",
+                "ancient whispers growing louder",
+                "stone grinding"
+            ]
+        }
+    }
+]

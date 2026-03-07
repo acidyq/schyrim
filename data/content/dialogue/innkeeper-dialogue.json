@@ -1,0 +1,201 @@
+[
+    {
+        "id": "hulda_dialogue",
+        "speakerId": "hulda_innkeeper",
+        "speakerName": "Hulda",
+        "startNodeId": "greeting",
+        "nodes": {
+            "greeting": {
+                "id": "greeting",
+                "text": "Welcome to the Bannered Mare, traveler. What can I do for you? We've got mead, rooms, and — well — rumors, if you're the sort who goes looking for trouble.",
+                "options": [
+                    {
+                        "id": "ask_rumors",
+                        "text": "What rumors have you heard?",
+                        "nextNodeId": "rumors"
+                    },
+                    {
+                        "id": "ask_room",
+                        "text": "I'd like a room for the night.",
+                        "nextNodeId": "room_offer"
+                    },
+                    {
+                        "id": "ask_trade",
+                        "text": "What do you have for sale?",
+                        "effects": [
+                            {
+                                "type": "open_trade",
+                                "vendorId": "hulda_innkeeper"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "persuade_info",
+                        "text": "[Speech] Surely you know more than rumors...",
+                        "nextNodeId": "persuade_success",
+                        "conditions": [
+                            {
+                                "type": "skill_check",
+                                "skill": "speech",
+                                "minLevel": 25
+                            }
+                        ],
+                        "skillCheckDifficulty": 30
+                    },
+                    {
+                        "id": "leave",
+                        "text": "Never mind. Farewell.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "rumors": {
+                "id": "rumors",
+                "text": "Well, there's been talk about Bleakfalls Barrow — the old ruin west of here, up in the mountains. Some merchants claim a golden dragon claw was stolen from their caravan by bandits who've holed up inside. They say it's worth a fortune... if you could recover it.",
+                "options": [
+                    {
+                        "id": "accept_quest",
+                        "text": "A golden claw? I'll look into it.",
+                        "nextNodeId": "quest_accepted",
+                        "effects": [
+                            {
+                                "type": "start_quest",
+                                "questId": "golden_claw"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ask_more",
+                        "text": "Tell me more about Bleakfalls Barrow.",
+                        "nextNodeId": "barrow_info"
+                    },
+                    {
+                        "id": "not_interested",
+                        "text": "Not my problem.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "barrow_info": {
+                "id": "barrow_info",
+                "text": "Bleakfalls Barrow is ancient — older than Whiterun itself. The Nords buried their dead there in ages past. It's full of traps and draugr — the walking dead. Not a place for the faint of heart. But the road southwest from the city gate will take you there, if you're brave enough. Or foolish.",
+                "options": [
+                    {
+                        "id": "accept_quest_2",
+                        "text": "I'll retrieve the golden claw.",
+                        "nextNodeId": "quest_accepted",
+                        "effects": [
+                            {
+                                "type": "start_quest",
+                                "questId": "golden_claw"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "back_to_main",
+                        "text": "Thanks for the information.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "quest_accepted": {
+                "id": "quest_accepted",
+                "text": "Be careful out there. Bleakfalls is no place for the unprepared. Stock up on potions before you go — and watch your step in the dark. The draugr don't sleep as soundly as they should. Good luck, traveler.",
+                "options": [
+                    {
+                        "id": "goodbye_quest",
+                        "text": "I'll be on my way.",
+                        "nextNodeId": "goodbye"
+                    }
+                ],
+                "effects": [
+                    {
+                        "type": "set_flag",
+                        "flagId": "hulda_mentioned_barrow",
+                        "value": true
+                    }
+                ]
+            },
+            "room_offer": {
+                "id": "room_offer",
+                "text": "A room costs 10 gold for the night. You'll get a warm bed and a roof over your head. Better than sleeping in the wilds, I promise you that.",
+                "options": [
+                    {
+                        "id": "buy_room",
+                        "text": "Here's 10 gold. [Rest until morning]",
+                        "nextNodeId": "room_booked",
+                        "conditions": [
+                            {
+                                "type": "stat_check",
+                                "stat": "gold",
+                                "minValue": 10
+                            }
+                        ],
+                        "effects": [
+                            {
+                                "type": "remove_gold",
+                                "amount": 10
+                            }
+                        ]
+                    },
+                    {
+                        "id": "no_gold",
+                        "text": "I can't afford that right now.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "room_booked": {
+                "id": "room_booked",
+                "text": "The room is yours. Rest well — the world will still be full of trouble come morning.",
+                "options": [
+                    {
+                        "id": "rest_done",
+                        "text": "[Rest until morning]",
+                        "nextNodeId": "goodbye",
+                        "effects": [
+                            {
+                                "type": "rest",
+                                "hours": 8
+                            }
+                        ]
+                    }
+                ],
+                "isTerminal": false
+            },
+            "persuade_success": {
+                "id": "persuade_success",
+                "text": "Ha! Sharp tongue on you. All right — between you and me, the bandits in Bleakfalls aren't just common thieves. Their leader, Arvel, is obsessed with what's deeper inside the barrow. Something about the claw being a key to an inner sanctum. You might find more than gold if you get past those ancient doors.",
+                "options": [
+                    {
+                        "id": "accept_after_persuade",
+                        "text": "A key to a sanctum? Now I'm definitely going.",
+                        "nextNodeId": "quest_accepted",
+                        "effects": [
+                            {
+                                "type": "start_quest",
+                                "questId": "golden_claw"
+                            },
+                            {
+                                "type": "set_flag",
+                                "flagId": "knows_claw_is_key",
+                                "value": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": "thanks_persuade",
+                        "text": "Interesting... thanks for the tip.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "goodbye": {
+                "id": "goodbye",
+                "text": "Safe travels, friend. May the gods watch over your battles.",
+                "options": [],
+                "isTerminal": true
+            }
+        }
+    }
+]

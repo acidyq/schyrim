@@ -1,0 +1,111 @@
+[
+    {
+        "id": "golden_claw",
+        "title": "The Golden Claw",
+        "description": "Retrieve the lost Golden Claw from Bleakfalls Barrow.",
+        "type": "side",
+        "prerequisites": [],
+        "stages": [
+            {
+                "id": "stage_start",
+                "description": "Travel to Bleakfalls Barrow and retrieve the Golden Claw.",
+                "objectives": [
+                    {
+                        "id": "reach_barrow",
+                        "text": "Enter Bleakfalls Barrow",
+                        "type": "go_to",
+                        "target": "bleakfalls_entrance",
+                        "locationId": "bleakfalls_entrance"
+                    }
+                ],
+                "nextStageId": "stage_find_claw"
+            },
+            {
+                "id": "stage_find_claw",
+                "description": "Find the Golden Claw inside Bleakfalls Barrow.",
+                "objectives": [
+                    {
+                        "id": "find_claw",
+                        "text": "Recover the Golden Claw",
+                        "type": "collect",
+                        "target": "golden_claw_key",
+                        "count": 1
+                    }
+                ],
+                "nextStageId": "stage_sanctum"
+            },
+            {
+                "id": "stage_sanctum",
+                "description": "Use the Golden Claw to open the sanctum door.",
+                "objectives": [
+                    {
+                        "id": "enter_sanctum",
+                        "text": "Open the puzzle door and enter the sanctum",
+                        "type": "go_to",
+                        "target": "bleakfalls_sanctum",
+                        "locationId": "bleakfalls_sanctum"
+                    }
+                ],
+                "nextStageId": "stage_defeat_overlord"
+            },
+            {
+                "id": "stage_defeat_overlord",
+                "description": "Defeat the Draugr Overlord guarding the inner sanctum.",
+                "objectives": [
+                    {
+                        "id": "kill_overlord",
+                        "text": "Defeat the Draugr Overlord",
+                        "type": "kill",
+                        "target": "draugr_overlord",
+                        "count": 1
+                    }
+                ],
+                "nextStageId": "stage_return",
+                "onComplete": [
+                    {
+                        "type": "give_xp",
+                        "amount": 200
+                    },
+                    {
+                        "type": "set_flag",
+                        "flagId": "overlord_defeated",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "id": "stage_return",
+                "description": "Return to Hulda at the Bannered Mare.",
+                "objectives": [
+                    {
+                        "id": "return_to_hulda",
+                        "text": "Return to Hulda in Whiterun",
+                        "type": "talk_to",
+                        "target": "hulda_innkeeper",
+                        "locationId": "bannered_mare"
+                    }
+                ],
+                "onComplete": [
+                    {
+                        "type": "give_gold",
+                        "amount": 400
+                    },
+                    {
+                        "type": "give_xp",
+                        "amount": 100
+                    }
+                ]
+            }
+        ],
+        "rewards": [
+            {
+                "type": "gold",
+                "amount": 400
+            },
+            {
+                "type": "xp",
+                "amount": 300
+            }
+        ]
+    }
+]

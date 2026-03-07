@@ -1,0 +1,58 @@
+[
+    {
+        "id": "belethor_shop",
+        "npcId": "belethor",
+        "name": "Belethor's General Goods",
+        "archetype": "general_goods",
+        "description": "A general store in Whiterun's market district. Belethor sells everything — as he loves to remind you.",
+        "locationId": "whiterun_market",
+        "factionId": "whiterun_guard",
+        "goldPool": 750,
+        "goldRegenHours": 48,
+        "priceBias": {
+            "weapons": 0.8,
+            "armor": 0.8,
+            "potions": 1.0,
+            "ingredients": 0.9,
+            "jewelry": 1.1,
+            "misc": 1.0,
+            "food": 1.0,
+            "default": 1.0
+        },
+        "inventoryPool": [
+            "potion_minor_healing",
+            "potion_minor_stamina",
+            "potion_minor_magicka",
+            "bread_loaf",
+            "iron_dagger",
+            "hide_boots",
+            "linen_wrap"
+        ],
+        "availableHours": {
+            "start": 8,
+            "end": 20
+        }
+    },
+    {
+        "id": "hulda_inn",
+        "npcId": "hulda_innkeeper",
+        "name": "The Bannered Mare — Hulda",
+        "archetype": "innkeeper",
+        "description": "The innkeeper of the Bannered Mare. She serves food, drink, and gossip.",
+        "locationId": "bannered_mare",
+        "factionId": "whiterun_guard",
+        "goldPool": 300,
+        "goldRegenHours": 24,
+        "priceBias": {
+            "food": 1.2,
+            "potions": 0.9,
+            "default": 0.8
+        },
+        "inventoryPool": [
+            "bread_loaf",
+            "cooked_venison",
+            "ale_bottle",
+            "potion_minor_healing"
+        ]
+    }
+]

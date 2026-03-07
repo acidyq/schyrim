@@ -1,0 +1,131 @@
+[
+    {
+        "id": "belethor_dialogue",
+        "speakerId": "belethor",
+        "speakerName": "Belethor",
+        "startNodeId": "greeting",
+        "nodes": {
+            "greeting": {
+                "id": "greeting",
+                "text": "Welcome to Belethor's General Goods! Everything's for sale, my friend — everything. If the price is right. Now, are you buying or just admiring the merchandise?",
+                "options": [
+                    {
+                        "id": "ask_trade",
+                        "text": "Let me see what you have.",
+                        "effects": [
+                            {
+                                "type": "open_trade",
+                                "vendorId": "belethor"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "ask_rumors",
+                        "text": "Heard any interesting rumors lately?",
+                        "nextNodeId": "rumors"
+                    },
+                    {
+                        "id": "ask_whiterun",
+                        "text": "What can you tell me about Whiterun?",
+                        "nextNodeId": "whiterun_info"
+                    },
+                    {
+                        "id": "persuade_deal",
+                        "text": "[Speech] Surely a loyal customer deserves a discount...",
+                        "nextNodeId": "speech_success",
+                        "conditions": [
+                            {
+                                "type": "skill_check",
+                                "skill": "speech",
+                                "minLevel": 20
+                            }
+                        ],
+                        "skillCheckDifficulty": 25
+                    },
+                    {
+                        "id": "leave",
+                        "text": "Just browsing. Farewell.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "rumors": {
+                "id": "rumors",
+                "text": "Ha — rumors? I'm a merchant, not a gossip. But since you're asking... a golden dragon claw was stolen from a merchant's pack. Bandits, naturally. They've holed up in Bleakfalls Barrow west of the city. The previous owner was hoping to sell it to me, actually. Shame — it would have fetched a fine price.",
+                "options": [
+                    {
+                        "id": "ask_about_claw",
+                        "text": "A golden claw? Sounds valuable.",
+                        "nextNodeId": "claw_info"
+                    },
+                    {
+                        "id": "rumors_back",
+                        "text": "Good to know. Thanks.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "claw_info": {
+                "id": "claw_info",
+                "text": "Oh, it's worth quite a bit — if you could get it back from those bandits. Ancient Nordic artifact, they say. I'd pay handsomely for it myself... but I suspect the original owner would want it returned. The Bannered Mare's innkeeper knows more. Ask Hulda.",
+                "options": [
+                    {
+                        "id": "claw_noted",
+                        "text": "I'll look into it.",
+                        "nextNodeId": "greeting",
+                        "effects": [
+                            {
+                                "type": "set_flag",
+                                "flagId": "belethor_mentioned_claw",
+                                "value": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": "claw_not_interested",
+                        "text": "Not my business.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "whiterun_info": {
+                "id": "whiterun_info",
+                "text": "Whiterun? Fine city. Good foot traffic — that's all I care about, honestly. The market district is yours to explore. Farengar up in Dragonsreach dabbles in magic if that's your sort of thing. The Bannered Mare is the place to hear gossip and sleep off a long road. And if you need anything else, you've already found the best shop in the hold.",
+                "options": [
+                    {
+                        "id": "whiterun_thanks",
+                        "text": "Much appreciated.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "speech_success": {
+                "id": "speech_success",
+                "text": "Ha! Smooth talker, aren't you? All right, I'll tell you what — I've got a few items I haven't put on the shelves yet. Not much, but the quality is good. Don't go spreading it around, or every wanderer in Skyrim will be knocking on my door expecting favors.",
+                "options": [
+                    {
+                        "id": "speech_trade",
+                        "text": "I'll take a look.",
+                        "effects": [
+                            {
+                                "type": "open_trade",
+                                "vendorId": "belethor"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "speech_later",
+                        "text": "Maybe another time.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "goodbye": {
+                "id": "goodbye",
+                "text": "Safe travels. And remember — Belethor's General Goods: if we don't have it, you probably don't need it.",
+                "options": [],
+                "isTerminal": true
+            }
+        }
+    }
+]

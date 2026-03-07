@@ -1,0 +1,99 @@
+[
+    {
+        "id": "iron_sword",
+        "name": "Iron Sword",
+        "description": "A simple but reliable blade of forged iron.",
+        "type": "weapon",
+        "weight": 9,
+        "baseValue": 25,
+        "rarity": "common",
+        "tags": [],
+        "damage": 7,
+        "damageType": "physical",
+        "speed": "normal",
+        "weaponClass": "one_handed_sword"
+    },
+    {
+        "id": "iron_dagger",
+        "name": "Iron Dagger",
+        "description": "A small, quick blade. Favored by the discreet.",
+        "type": "weapon",
+        "weight": 4,
+        "baseValue": 10,
+        "rarity": "common",
+        "tags": [],
+        "damage": 4,
+        "damageType": "physical",
+        "speed": "fast",
+        "weaponClass": "dagger"
+    },
+    {
+        "id": "steel_greatsword",
+        "name": "Steel Greatsword",
+        "description": "A massive two-handed blade of tempered steel. Slow, but devastating.",
+        "type": "weapon",
+        "weight": 17,
+        "baseValue": 90,
+        "rarity": "uncommon",
+        "tags": [],
+        "damage": 17,
+        "damageType": "physical",
+        "speed": "slow",
+        "weaponClass": "two_handed_sword"
+    },
+    {
+        "id": "hunting_bow",
+        "name": "Hunting Bow",
+        "description": "A basic wooden bow used for hunting game.",
+        "type": "weapon",
+        "weight": 7,
+        "baseValue": 50,
+        "rarity": "common",
+        "tags": [],
+        "damage": 9,
+        "damageType": "physical",
+        "speed": "normal",
+        "weaponClass": "bow"
+    },
+    {
+        "id": "ancient_nord_war_axe",
+        "name": "Ancient Nord War Axe",
+        "description": "A frost-encrusted axe from the tombs of ancient warriors. Cold radiates from its edge.",
+        "type": "weapon",
+        "weight": 11,
+        "baseValue": 135,
+        "rarity": "rare",
+        "tags": [
+            "enchanted"
+        ],
+        "damage": 12,
+        "damageType": "frost",
+        "speed": "normal",
+        "weaponClass": "one_handed_axe",
+        "enchantmentId": "frost_damage_1"
+    },
+    {
+        "id": "golden_claw_key",
+        "name": "Golden Claw",
+        "description": "An ornate golden dragon claw. Ancient Nordic symbols are etched into its palm. It seems to be a key of some kind.",
+        "type": "quest_item",
+        "weight": 0.5,
+        "baseValue": 400,
+        "rarity": "unique",
+        "tags": [
+            "quest",
+            "unique"
+        ],
+        "questId": "golden_claw"
+    },
+    {
+        "id": "iron_arrows",
+        "name": "Iron Arrows",
+        "description": "Standard iron-tipped arrows.",
+        "type": "misc",
+        "weight": 0,
+        "baseValue": 1,
+        "rarity": "common",
+        "tags": []
+    }
+]

@@ -34,9 +34,11 @@ export interface ModpackMetadata {
 }
 
 /**
- * Mod Pack Structure:
+ * Mod Structure:
+ *
+ * INDIVIDUAL MOD (.mod):
  * mods/
- *   my-mod-pack/
+ *   my-mod/
  *     modpack.json              (metadata)
  *     content/
  *       items/                  (optional)
@@ -50,6 +52,18 @@ export interface ModpackMetadata {
  *       factions/               (optional)
  *       vendors/                (optional)
  *       leveled-lists/          (optional)
+ *
+ * MOD COLLECTION (.modpack):
+ * mods/
+ *   my-collection.modpack/
+ *     modpack.json              (collection metadata, optional)
+ *     mods/
+ *       mod-one/                (individual mod)
+ *         modpack.json
+ *         content/
+ *       mod-two/                (individual mod)
+ *         modpack.json
+ *         content/
  */
 
 export interface LoadedModpack {
@@ -121,8 +135,13 @@ export function loadModpack(modpackDir: string): LoadedModpack | null {
 }
 
 /**
- * Discover and load all modpacks from the mods directory
- * Returns modpacks in load order (respecting loadOrder metadata)
+ * Discover and load all mods from the mods directory
+ * Supports both individual mods (.mod) and modpack collections (.modpack)
+ *
+ * Individual mod: mods/my-mod/modpack.json + content/
+ * Modpack collection: mods/my-collection.modpack/mods/mod-one/, mods/mod-two/, etc.
+ *
+ * Returns mods in load order (respecting loadOrder metadata)
  */
 export function discoverModpacks(): LoadedModpack[] {
     if (!existsSync(MODS_DIR)) {
@@ -136,9 +155,26 @@ export function discoverModpacks(): LoadedModpack[] {
         const modDir = join(MODS_DIR, entry);
         if (!statSync(modDir).isDirectory()) continue;
 
-        const mod = loadModpack(modDir);
-        if (mod) {
-            modpacks.push(mod);
+        // Check if this is a modpack collection (has mods/ subdirectory)
+        const modsSubdir = join(modDir, 'mods');
+        if (existsSync(modsSubdir) && statSync(modsSubdir).isDirectory()) {
+            // This is a .modpack collection — load all mods inside
+            const modEntries = readdirSync(modsSubdir);
+            for (const modEntry of modEntries) {
+                const individualModDir = join(modsSubdir, modEntry);
+                if (!statSync(individualModDir).isDirectory()) continue;
+
+                const mod = loadModpack(individualModDir);
+                if (mod) {
+                    modpacks.push(mod);
+                }
+            }
+        } else {
+            // This is an individual .mod — load it directly
+            const mod = loadModpack(modDir);
+            if (mod) {
+                modpacks.push(mod);
+            }
         }
     }
 

@@ -1,0 +1,137 @@
+[
+    {
+        "id": "guard_dialogue",
+        "speakerId": "whiterun_guard",
+        "speakerName": "Whiterun Guard",
+        "startNodeId": "greeting",
+        "nodes": {
+            "greeting": {
+                "id": "greeting",
+                "text": "Halt. State your business in Whiterun... Hmph. Traveler, are you? Fair enough. What do you need, citizen?",
+                "options": [
+                    {
+                        "id": "ask_city",
+                        "text": "What can you tell me about the city?",
+                        "nextNodeId": "city_info"
+                    },
+                    {
+                        "id": "ask_dangers",
+                        "text": "Are the roads safe?",
+                        "nextNodeId": "road_dangers"
+                    },
+                    {
+                        "id": "ask_bleakfalls",
+                        "text": "What do you know about Bleakfalls Barrow?",
+                        "nextNodeId": "bleakfalls_info"
+                    },
+                    {
+                        "id": "persuade_bounty",
+                        "text": "[Speech] Any work for a capable sword-arm?",
+                        "nextNodeId": "bounty_info",
+                        "conditions": [
+                            {
+                                "type": "skill_check",
+                                "skill": "speech",
+                                "minLevel": 15
+                            }
+                        ],
+                        "skillCheckDifficulty": 20
+                    },
+                    {
+                        "id": "leave",
+                        "text": "Nothing. Carry on.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "city_info": {
+                "id": "city_info",
+                "text": "Whiterun's a fine city — one of the last truly peaceful holds in Skyrim, if you ask me. The market's open most mornings. Belethor runs the general goods shop just past the main gate — sells a bit of everything. The Bannered Mare is the inn, good place to rest and hear news. And Dragonsreach up the hill is the Jarl's palace. Don't cause trouble there.",
+                "options": [
+                    {
+                        "id": "city_thanks",
+                        "text": "Good to know. Thanks.",
+                        "nextNodeId": "greeting"
+                    },
+                    {
+                        "id": "city_dangers",
+                        "text": "Any dangers I should know about?",
+                        "nextNodeId": "road_dangers"
+                    }
+                ]
+            },
+            "road_dangers": {
+                "id": "road_dangers",
+                "text": "Safe? Ha. The roads haven't been safe since... well, ever. Bandits on the western road, wolves in the wilderness. Word is a group of them have set up in Bleakfalls Barrow — ancient Nordic ruin up in the mountains west of here. We've had reports, but it's outside city jurisdiction. If you're heading that way, go armed and go careful.",
+                "options": [
+                    {
+                        "id": "dangers_bleakfalls",
+                        "text": "Tell me more about Bleakfalls.",
+                        "nextNodeId": "bleakfalls_info"
+                    },
+                    {
+                        "id": "dangers_noted",
+                        "text": "I'll keep my eyes open. Thanks.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "bleakfalls_info": {
+                "id": "bleakfalls_info",
+                "text": "Bleakfalls Barrow. Ancient Nord burial site, older than Whiterun itself. Full of draugr — the walking dead — and now bandits too, which is a charming combination. The road southwest from the city gate takes you up toward the mountains. There are traps inside; the old Nords were fond of those. I'd recommend a full pack of healing potions before you even think about going in.",
+                "options": [
+                    {
+                        "id": "bleakfalls_brave",
+                        "text": "I can handle it.",
+                        "nextNodeId": "guard_respect"
+                    },
+                    {
+                        "id": "bleakfalls_thanks",
+                        "text": "Thanks for the warning.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "guard_respect": {
+                "id": "guard_respect",
+                "text": "Ha. Either you're very capable or very foolish. In my experience, it's usually the latter — but sometimes the gods smile on the bold. Watch yourself in there. And if you make it back, drinks are on you at the Bannered Mare.",
+                "options": [
+                    {
+                        "id": "guard_respect_leave",
+                        "text": "I'll hold you to that.",
+                        "nextNodeId": "goodbye"
+                    }
+                ]
+            },
+            "bounty_info": {
+                "id": "bounty_info",
+                "text": "Sword-arm, eh? Well... officially I'm not supposed to say, but there have been reports of a stolen artifact — some kind of golden claw — taken by the bandits in Bleakfalls. If someone were to recover it and return it to the inn, I imagine the reward would be generous. Not that the city can officially offer anything. You understand.",
+                "options": [
+                    {
+                        "id": "bounty_accept",
+                        "text": "Consider it done.",
+                        "nextNodeId": "goodbye",
+                        "effects": [
+                            {
+                                "type": "set_flag",
+                                "flagId": "guard_mentioned_claw",
+                                "value": true
+                            }
+                        ]
+                    },
+                    {
+                        "id": "bounty_decline",
+                        "text": "I'll think about it.",
+                        "nextNodeId": "greeting"
+                    }
+                ]
+            },
+            "goodbye": {
+                "id": "goodbye",
+                "text": "Stay out of trouble, citizen. And watch your back on the roads.",
+                "options": [],
+                "isTerminal": true
+            }
+        }
+    }
+]

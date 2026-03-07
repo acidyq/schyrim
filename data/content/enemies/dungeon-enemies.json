@@ -1,0 +1,181 @@
+[
+    {
+        "id": "bandit_melee",
+        "name": "Bandit",
+        "description": "A common roadside thug armed with a simple blade. More bark than bite, but dangerous in numbers.",
+        "level": 2,
+        "health": 60,
+        "stamina": 50,
+        "magicka": 0,
+        "armorRating": 12,
+        "resistances": {},
+        "skills": {
+            "one_handed": 15,
+            "block": 10,
+            "light_armor": 10
+        },
+        "equipment": [
+            "iron_sword",
+            "hide_bracers"
+        ],
+        "lootTableId": "bandit_loot",
+        "combatBehavior": {
+            "preferredRange": "melee",
+            "aggressiveness": 0.7,
+            "fleeThreshold": 0.2
+        },
+        "detectionRange": 5,
+        "tags": [
+            "humanoid",
+            "bandit"
+        ]
+    },
+    {
+        "id": "bandit_archer",
+        "name": "Bandit Archer",
+        "description": "A bandit who prefers to fight from a distance with a bow.",
+        "level": 3,
+        "health": 50,
+        "stamina": 60,
+        "magicka": 0,
+        "armorRating": 8,
+        "resistances": {},
+        "skills": {
+            "archery": 20,
+            "sneak": 15,
+            "light_armor": 8
+        },
+        "equipment": [
+            "hunting_bow",
+            "iron_dagger",
+            "leather_armor"
+        ],
+        "lootTableId": "bandit_loot",
+        "combatBehavior": {
+            "preferredRange": "ranged",
+            "aggressiveness": 0.5,
+            "fleeThreshold": 0.3
+        },
+        "detectionRange": 8,
+        "tags": [
+            "humanoid",
+            "bandit"
+        ]
+    },
+    {
+        "id": "draugr",
+        "name": "Draugr",
+        "description": "An ancient undead warrior. Its eyes glow with a cold blue light in the darkness of the barrow.",
+        "level": 4,
+        "health": 80,
+        "stamina": 40,
+        "magicka": 0,
+        "armorRating": 18,
+        "resistances": {
+            "frost": 0.5,
+            "poison": 1.0
+        },
+        "skills": {
+            "one_handed": 20,
+            "block": 15
+        },
+        "equipment": [
+            "ancient_nord_war_axe"
+        ],
+        "lootTableId": "draugr_loot",
+        "combatBehavior": {
+            "preferredRange": "melee",
+            "aggressiveness": 0.9,
+            "fleeThreshold": 0.0
+        },
+        "detectionRange": 4,
+        "tags": [
+            "undead",
+            "draugr",
+            "ancient"
+        ]
+    },
+    {
+        "id": "draugr_wight",
+        "name": "Draugr Wight",
+        "description": "A more powerful draugr, clad in ancient armor. Frost magic crackles between its skeletal fingers.",
+        "level": 7,
+        "health": 120,
+        "stamina": 60,
+        "magicka": 40,
+        "armorRating": 25,
+        "resistances": {
+            "frost": 0.75,
+            "poison": 1.0
+        },
+        "skills": {
+            "one_handed": 30,
+            "block": 20,
+            "destruction": 20
+        },
+        "equipment": [
+            "ancient_nord_war_axe"
+        ],
+        "lootTableId": "draugr_loot",
+        "combatBehavior": {
+            "preferredRange": "melee",
+            "aggressiveness": 0.85,
+            "fleeThreshold": 0.0,
+            "spellIds": [
+                "spell_frostbite"
+            ]
+        },
+        "detectionRange": 5,
+        "tags": [
+            "undead",
+            "draugr",
+            "ancient",
+            "magic_user"
+        ]
+    },
+    {
+        "id": "draugr_overlord",
+        "name": "Draugr Overlord",
+        "description": "The lord of Bleakfalls Barrow. An ancient Nord king-warrior, interred with fearsome power. Its shout shakes the very stones.",
+        "level": 12,
+        "health": 200,
+        "stamina": 100,
+        "magicka": 80,
+        "armorRating": 40,
+        "resistances": {
+            "frost": 0.75,
+            "poison": 1.0,
+            "magic": 0.25
+        },
+        "skills": {
+            "two_handed": 40,
+            "block": 30,
+            "destruction": 25,
+            "heavy_armor": 30
+        },
+        "equipment": [
+            "ancient_nord_war_axe",
+            "iron_helmet"
+        ],
+        "lootTableId": "boss_draugr_loot",
+        "combatBehavior": {
+            "preferredRange": "melee",
+            "aggressiveness": 0.95,
+            "fleeThreshold": 0.0,
+            "spellIds": [
+                "spell_frostbite"
+            ],
+            "shoutIds": [
+                "shout_unrelenting_force"
+            ]
+        },
+        "detectionRange": 6,
+        "tags": [
+            "undead",
+            "draugr",
+            "ancient",
+            "boss",
+            "magic_user"
+        ]
+    }
+]

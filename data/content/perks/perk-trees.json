@@ -1,0 +1,268 @@
+[
+    {
+        "id": "armsman_1",
+        "name": "Armsman (Rank 1)",
+        "tree": "one_handed",
+        "tier": 1,
+        "description": "One-handed weapons do 20% more damage.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "one_handed",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "armsman_2",
+        "name": "Armsman (Rank 2)",
+        "tree": "one_handed",
+        "tier": 2,
+        "description": "One-handed weapons do 40% more damage.",
+        "prerequisitePerks": [
+            "armsman_1"
+        ],
+        "skillRequirement": 25,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "one_handed",
+                "value": 1.4
+            }
+        ]
+    },
+    {
+        "id": "bladesman",
+        "name": "Bladesman",
+        "tree": "one_handed",
+        "tier": 2,
+        "description": "Attacks with swords have a 10% chance of doing critical damage.",
+        "prerequisitePerks": [
+            "armsman_1"
+        ],
+        "skillRequirement": 30,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "critical_chance_sword",
+                "value": 0.10
+            }
+        ]
+    },
+    {
+        "id": "barbarian_1",
+        "name": "Barbarian (Rank 1)",
+        "tree": "two_handed",
+        "tier": 1,
+        "description": "Two-handed weapons do 20% more damage.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "two_handed",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "overdraw_1",
+        "name": "Overdraw (Rank 1)",
+        "tree": "archery",
+        "tier": 1,
+        "description": "Bows do 20% more damage.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "archery",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "stealth_1",
+        "name": "Stealth (Rank 1)",
+        "tree": "sneak",
+        "tier": 1,
+        "description": "You are 20% harder to detect.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "sneak_multiplier",
+                "target": "detection",
+                "value": 0.8
+            }
+        ]
+    },
+    {
+        "id": "backstab",
+        "name": "Backstab",
+        "tree": "sneak",
+        "tier": 2,
+        "description": "Sneak attacks with one-handed weapons do 6x damage.",
+        "prerequisitePerks": [
+            "stealth_1"
+        ],
+        "skillRequirement": 30,
+        "effects": [
+            {
+                "type": "sneak_multiplier",
+                "target": "one_handed_sneak",
+                "value": 6.0
+            }
+        ]
+    },
+    {
+        "id": "novice_destruction",
+        "name": "Novice Destruction",
+        "tree": "destruction",
+        "tier": 1,
+        "description": "Novice Destruction spells cost 50% less magicka.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "cost_reduction",
+                "target": "destruction_novice",
+                "value": 0.5
+            }
+        ]
+    },
+    {
+        "id": "augmented_flames",
+        "name": "Augmented Flames",
+        "tree": "destruction",
+        "tier": 2,
+        "description": "Fire spells do 25% more damage.",
+        "prerequisitePerks": [
+            "novice_destruction"
+        ],
+        "skillRequirement": 30,
+        "effects": [
+            {
+                "type": "damage_multiplier",
+                "target": "fire",
+                "value": 1.25
+            }
+        ]
+    },
+    {
+        "id": "novice_restoration",
+        "name": "Novice Restoration",
+        "tree": "restoration",
+        "tier": 1,
+        "description": "Novice Restoration spells cost 50% less magicka.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "cost_reduction",
+                "target": "restoration_novice",
+                "value": 0.5
+            }
+        ]
+    },
+    {
+        "id": "haggling_1",
+        "name": "Haggling (Rank 1)",
+        "tree": "speech",
+        "tier": 1,
+        "description": "Buying and selling prices are 10% better.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "price_modifier",
+                "target": "all",
+                "value": 0.9
+            }
+        ]
+    },
+    {
+        "id": "allure",
+        "name": "Allure",
+        "tree": "speech",
+        "tier": 2,
+        "description": "10% better prices with NPCs of the opposite gender.",
+        "prerequisitePerks": [
+            "haggling_1"
+        ],
+        "skillRequirement": 30,
+        "effects": [
+            {
+                "type": "price_modifier",
+                "target": "gender_opposite",
+                "value": 0.9
+            }
+        ]
+    },
+    {
+        "id": "juggernaut_1",
+        "name": "Juggernaut (Rank 1)",
+        "tree": "heavy_armor",
+        "tier": 1,
+        "description": "Heavy armor rating increased by 20%.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "armor_bonus",
+                "target": "heavy_armor",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "agile_defender_1",
+        "name": "Agile Defender (Rank 1)",
+        "tree": "light_armor",
+        "tier": 1,
+        "description": "Light armor rating increased by 20%.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "armor_bonus",
+                "target": "light_armor",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "shield_wall_1",
+        "name": "Shield Wall (Rank 1)",
+        "tree": "block",
+        "tier": 1,
+        "description": "Blocking is 20% more effective.",
+        "prerequisitePerks": [],
+        "skillRequirement": 0,
+        "effects": [
+            {
+                "type": "armor_bonus",
+                "target": "block",
+                "value": 1.2
+            }
+        ]
+    },
+    {
+        "id": "extra_pockets",
+        "name": "Extra Pockets",
+        "tree": "pickpocket",
+        "tier": 2,
+        "description": "Carrying capacity increased by 100 points.",
+        "prerequisitePerks": [],
+        "skillRequirement": 50,
+        "effects": [
+            {
+                "type": "carry_weight_bonus",
+                "target": "carry_weight",
+                "value": 100
+            }
+        ]
+    }
+]

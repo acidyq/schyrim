@@ -1,0 +1,184 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Schyrim Item",
+    "description": "Schema for game items (weapons, armor, potions, etc.)",
+    "type": "object",
+    "required": [
+        "id",
+        "name",
+        "type",
+        "weight",
+        "baseValue"
+    ],
+    "properties": {
+        "id": {
+            "type": "string",
+            "minLength": 1
+        },
+        "name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "description": {
+            "type": "string"
+        },
+        "type": {
+            "type": "string",
+            "enum": [
+                "weapon",
+                "armor",
+                "clothing",
+                "jewelry",
+                "spell_tome",
+                "potion",
+                "food",
+                "ingredient",
+                "scroll",
+                "soul_gem",
+                "misc",
+                "quest_item"
+            ]
+        },
+        "weight": {
+            "type": "number",
+            "minimum": 0
+        },
+        "baseValue": {
+            "type": "number",
+            "minimum": 0
+        },
+        "rarity": {
+            "type": "string",
+            "enum": [
+                "common",
+                "uncommon",
+                "rare",
+                "epic",
+                "legendary",
+                "unique"
+            ],
+            "default": "common"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "default": []
+        },
+        "damage": {
+            "type": "number",
+            "minimum": 0
+        },
+        "damageType": {
+            "type": "string",
+            "enum": [
+                "physical",
+                "fire",
+                "frost",
+                "shock",
+                "poison",
+                "magic"
+            ]
+        },
+        "speed": {
+            "type": "string",
+            "enum": [
+                "slow",
+                "normal",
+                "fast"
+            ]
+        },
+        "weaponClass": {
+            "type": "string",
+            "enum": [
+                "one_handed_sword",
+                "one_handed_axe",
+                "one_handed_mace",
+                "two_handed_sword",
+                "two_handed_axe",
+                "two_handed_hammer",
+                "bow",
+                "crossbow",
+                "dagger",
+                "staff"
+            ]
+        },
+        "armorRating": {
+            "type": "number",
+            "minimum": 0
+        },
+        "slot": {
+            "type": "string",
+            "enum": [
+                "head",
+                "chest",
+                "hands",
+                "feet",
+                "shield",
+                "ring",
+                "amulet"
+            ]
+        },
+        "armorType": {
+            "type": "string",
+            "enum": [
+                "light",
+                "heavy",
+                "clothing"
+            ]
+        },
+        "enchantmentId": {
+            "type": "string"
+        },
+        "effect": {
+            "type": "string"
+        },
+        "magnitude": {
+            "type": "number"
+        },
+        "duration": {
+            "type": "number",
+            "minimum": 0
+        },
+        "spellId": {
+            "type": "string"
+        },
+        "questId": {
+            "type": "string"
+        },
+        "healthRestore": {
+            "type": "number"
+        },
+        "staminaRestore": {
+            "type": "number"
+        },
+        "alchemyEffects": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "charges": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "gemSize": {
+            "type": "string",
+            "enum": [
+                "petty",
+                "lesser",
+                "common",
+                "greater",
+                "grand",
+                "black"
+            ]
+        },
+        "filled": {
+            "type": "boolean"
+        },
+        "critMultiplier": {
+            "type": "number"
+        }
+    }
+}

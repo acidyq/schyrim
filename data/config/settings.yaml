@@ -1,0 +1,28 @@
+# ============================================================
+# Schyrim — Game Settings
+# Modify these to adjust difficulty, immersion, and display
+# ============================================================
+
+difficulty:
+  damageDealtMultiplier: 1.0     # 0.5 = easy, 1.0 = normal, 2.0 = hard
+  damageReceivedMultiplier: 1.0
+  xpMultiplier: 1.0
+  lootRarityBias: 0              # higher = more rare drops
+  encounterFrequency: 0.5        # 0.0 - 1.0
+
+immersion:
+  survivalEnabled: false         # cold, hunger, fatigue (future feature)
+  weatherEffects: true
+  timePassing: true
+  randomEncounters: true
+
+display:
+  colorMode: full                # full | minimal | none
+  combatLogVerbosity: succinct   # succinct | detailed
+  confirmDestructiveActions: true
+  showDamageBreakdown: false
+
+ai:
+  enabled: true
+  verbosity: standard            # minimal | standard | cinematic
+  showSuggestedOptions: true

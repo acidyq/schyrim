@@ -1,0 +1,114 @@
+[
+    {
+        "id": "spell_flames",
+        "name": "Flames",
+        "school": "destruction",
+        "description": "A gout of fire that does 8 points of damage per second to a target.",
+        "magickaCost": 14,
+        "damage": 8,
+        "damageType": "fire",
+        "range": "ranged",
+        "castTime": "instant",
+        "effects": [
+            {
+                "type": "direct_damage",
+                "magnitude": 8,
+                "duration": 0
+            },
+            {
+                "type": "burning",
+                "magnitude": 2,
+                "duration": 3
+            }
+        ],
+        "skillRequirement": 0
+    },
+    {
+        "id": "spell_healing",
+        "name": "Healing",
+        "school": "restoration",
+        "description": "Heals the caster 10 points per second.",
+        "magickaCost": 12,
+        "healAmount": 10,
+        "range": "self",
+        "castTime": "instant",
+        "effects": [
+            {
+                "type": "direct_heal",
+                "magnitude": 10,
+                "duration": 0
+            }
+        ],
+        "skillRequirement": 0
+    },
+    {
+        "id": "spell_frostbite",
+        "name": "Frostbite",
+        "school": "destruction",
+        "description": "A blast of cold that does 8 points of frost damage to health and stamina.",
+        "magickaCost": 16,
+        "damage": 8,
+        "damageType": "frost",
+        "range": "ranged",
+        "castTime": "instant",
+        "effects": [
+            {
+                "type": "direct_damage",
+                "magnitude": 8,
+                "duration": 0
+            },
+            {
+                "type": "drain_stamina",
+                "magnitude": 4,
+                "duration": 3
+            },
+            {
+                "type": "slowed",
+                "magnitude": 20,
+                "duration": 2
+            }
+        ],
+        "skillRequirement": 0
+    },
+    {
+        "id": "spell_sparks",
+        "name": "Sparks",
+        "school": "destruction",
+        "description": "Lightning bolts that do 8 points of shock damage to health and magicka.",
+        "magickaCost": 18,
+        "damage": 8,
+        "damageType": "shock",
+        "range": "ranged",
+        "castTime": "instant",
+        "effects": [
+            {
+                "type": "direct_damage",
+                "magnitude": 8,
+                "duration": 0
+            },
+            {
+                "type": "drain_magicka",
+                "magnitude": 4,
+                "duration": 0
+            }
+        ],
+        "skillRequirement": 15
+    },
+    {
+        "id": "spell_oakflesh",
+        "name": "Oakflesh",
+        "school": "alteration",
+        "description": "Improves the caster's armor rating by 40 points for 60 seconds.",
+        "magickaCost": 20,
+        "range": "self",
+        "castTime": "instant",
+        "effects": [
+            {
+                "type": "fortified",
+                "magnitude": 40,
+                "duration": 10
+            }
+        ],
+        "skillRequirement": 0
+    }
+]
