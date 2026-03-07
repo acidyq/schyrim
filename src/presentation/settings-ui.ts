@@ -8,7 +8,11 @@ import { select, input, confirm } from '@inquirer/prompts';
 import { Separator } from '@inquirer/prompts';
 import { ui } from './tui/screen.js';
 import { getSettingsManager } from '../core/settings-manager.js';
-import { sleep } from '../core/config-manager.js';
+
+// Helper function
+function sleep(ms: number): Promise<void> {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 /**
  * Display the main settings menu
