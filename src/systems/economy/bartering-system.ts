@@ -13,6 +13,7 @@ import type {
     VendorPriceBias,
 } from '../../core/types/vendor.types.js';
 import type { FactionDefinition } from '../../core/types/faction.types.js';
+import type { VendorInstanceState } from '../../core/types/location.types.js';
 import { calculatePrice, PriceContext } from '../economy/price-calculator.js';
 import { getReputation } from '../factions/faction-system.js';
 import { addItem, removeItem } from '../inventory/inventory-system.js';
@@ -26,20 +27,37 @@ const vendorStates = new Map<string, VendorInstance>();
 
 /**
  * Get or initialize a vendor's runtime state.
+ * Loads from saved world state if available, otherwise initializes fresh.
  */
 export function getVendorState(
     vendorDef: VendorDefinition,
-    world: { currentTime: { day: number; hour: number } },
+    world: { currentTime: { day: number; hour: number }; currentVendorStates: Record<string, VendorInstanceState> },
 ): VendorInstance {
     let state = vendorStates.get(vendorDef.id);
     if (!state) {
-        state = {
-            vendorId: vendorDef.id,
-            currentGold: vendorDef.goldPool,
-            lastRestockTime: world.currentTime.day * 24 + world.currentTime.hour,
-            soldToPlayer: [],
-            boughtFromPlayer: [],
-        };
+        // Try to restore from saved world state
+        const savedState = world.currentVendorStates[vendorDef.id];
+        if (savedState) {
+            state = {
+                vendorId: vendorDef.id,
+                currentGold: savedState.currentGold,
+                lastRestockTime: savedState.lastRestockTime,
+                soldToPlayer: [],
+                boughtFromPlayer: savedState.itemsBoughtFromPlayer.map(item => ({
+                    itemId: item.itemId,
+                    quantity: item.quantity,
+                })),
+            };
+        } else {
+            // Fresh state for new game
+            state = {
+                vendorId: vendorDef.id,
+                currentGold: vendorDef.goldPool,
+                lastRestockTime: world.currentTime.day * 24 + world.currentTime.hour,
+                soldToPlayer: [],
+                boughtFromPlayer: [],
+            };
+        }
         vendorStates.set(vendorDef.id, state);
     }
 
@@ -53,6 +71,25 @@ export function getVendorState(
     }
 
     return state;
+}
+
+/**
+ * Persist all vendor states to world state for saving.
+ */
+export function persistVendorStatesToWorld(gsm: GameStateManager): void {
+    const currentVendorStates: Record<string, VendorInstanceState> = {};
+    for (const [vendorId, state] of vendorStates) {
+        currentVendorStates[vendorId] = {
+            vendorId: state.vendorId,
+            currentGold: state.currentGold,
+            lastRestockTime: state.lastRestockTime,
+            itemsBoughtFromPlayer: state.boughtFromPlayer.map(item => ({
+                itemId: item.itemId,
+                quantity: item.quantity,
+            })),
+        };
+    }
+    gsm.updateWorld({ currentVendorStates });
 }
 
 /**

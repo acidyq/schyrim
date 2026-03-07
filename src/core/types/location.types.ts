@@ -4,14 +4,24 @@
 
 import type { ContainerInventory } from './items.types.js';
 
+export interface VendorInstanceState {
+    vendorId: string;
+    currentGold: number;
+    lastRestockTime: number;
+    /** Items the vendor bought from the player and now has for resale */
+    itemsBoughtFromPlayer: Array<{ itemId: string; quantity: number }>;
+}
+
 export interface WorldState {
     locations: Record<string, LocationInstance>;
     currentTime: GameTime;
     weather: WeatherState;
     discoveredLocations: string[];
     worldFlags: Record<string, boolean>;
-    /** Persistent vendor inventories: vendorId → itemId → quantity */
+    /** Persistent vendor inventories: vendorId → itemId → quantity (base pool + bought items) */
     vendorInventories: Record<string, Record<string, number>>;
+    /** Persistent vendor state: vendorId → current gold, restock time, items bought from player */
+    currentVendorStates: Record<string, VendorInstanceState>;
 }
 
 /** Definition of a location (from data) */

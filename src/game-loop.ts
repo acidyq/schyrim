@@ -50,6 +50,7 @@ import { saveGame, loadGame, listSaves, hasSaves } from './save-system.js';
 import {
     buyFromVendor, sellToVendor, getVendorBuyPrice, getVendorSellPrice,
     getVendorInventory, getPlayerSellableItems, getVendorState,
+    persistVendorStatesToWorld,
 } from './systems/economy/bartering-system.js';
 import {
     acquirePerk, getPerkTree, getAvailablePerkTrees,
@@ -1764,6 +1765,9 @@ async function handleQuestJournal(ctx: GameContext): Promise<void> {
 async function handleSave(ctx: GameContext): Promise<void> {
     const player = ctx.gsm.getPlayer();
     const defaultName = `${player.name.toLowerCase().replace(/\s+/g, '_')}_lv${player.level}`;
+
+    // Persist vendor states to world state before saving
+    persistVendorStatesToWorld(ctx.gsm);
 
     const saveName = await ui.input('Save name:', defaultName);
     const state = JSON.parse(ctx.gsm.snapshot());

@@ -177,6 +177,7 @@ export class GameStateManager {
                 discoveredLocations: [],
                 worldFlags: {},
                 vendorInventories: {},
+                currentVendorStates: {},
             },
             quests: {
                 activeQuests: {},
