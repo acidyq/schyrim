@@ -32,6 +32,7 @@ import {
     renderCombatLog, renderNotification, renderDialogue,
     renderInventory, renderCharacterSheet, renderDivider,
 } from './presentation/cli-renderer.js';
+import { showSettingsMenu } from './presentation/settings-ui.js';
 
 import {
     getAvailableExits, moveTo, formatTime, advanceTime,
@@ -133,6 +134,7 @@ async function mainMenu(ctx: GameContext): Promise<void> {
             value: 'continue',
             disabled: savesExist ? false : '(no saves found)',
         },
+        { name: '⚙️  Settings', value: 'settings' },
         { name: chalk.gray('Quit'), value: 'quit' },
     ];
 
@@ -141,6 +143,7 @@ async function mainMenu(ctx: GameContext): Promise<void> {
     switch (choice) {
         case 'new': await newGame(ctx); break;
         case 'continue': await continueGame(ctx); break;
+        case 'settings': await showSettingsMenu(); break;
         case 'quit':
             ui.log(chalk.gray('\n  Farewell, traveller...\n'));
             await sleep(600);
